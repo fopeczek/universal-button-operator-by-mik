@@ -1,0 +1,19 @@
+{
+"name": "universal button operator by mik",
+"version": "0.0.1",
+"repository":
+{
+    "type": "git",
+    "url": "https://github.com/fopeczek/button_click.git"
+},
+"description": "Single non-latching key support. Rebound filter. Supports 4 events: short click and long click, on and off.",
+"authors": [
+{
+	"name": "Mikołaj Krawczuk",
+	"email": "mikolaj@statystyka.net"
+}],
+"license": "Apache-2.0",
+"dependencies": {
+	"Silent/function_objects": "^1.0.0"
+}
+}
