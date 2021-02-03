@@ -38,7 +38,7 @@ void Guzik::update(bool debug) {
 		}
 	} else if (m_state==click_state::grace_period_pressed){
 		if (not read && millis() - m_fast_t >= GRACE_PERIOD) {//jeżeli minie czas grace period
-			m_state=click_state::pulled;//                 to znaczy że puszczono
+			m_state=click_state::pulled;//                       to znaczy że puszczono
 			if (millis() - m_czas_n >= 1000){
 				if (m_use_hold){
 					m_event_hold();
@@ -94,3 +94,46 @@ void Guzik::setupTurnOffHandler(FunctionObject<void(void)> event_off) {
 }
 
 void nofun() {}
+
+void GuzikTrio::setupFirstUsingAnalogPin(int pin) {
+	st.setupUsingAnalogPin(pin);
+}
+
+void GuzikTrio::setupSecondUsingAnalogPin(int pin) {
+	nd.setupUsingAnalogPin(pin);
+}
+
+void GuzikTrio::setupThirdUsingAnalogPin(int pin) {
+	rd.setupUsingAnalogPin(pin);
+}
+
+void GuzikTrio::setupFirstUsingDigitalPin(int pin) {
+	st.setupUsingDigitalPin(pin);
+}
+
+void GuzikTrio::setupSecondUsingDigitalPin(int pin) {
+	nd.setupUsingDigitalPin(pin);
+}
+
+void GuzikTrio::setupThirdUsingDigitalPin(int pin) {
+	rd.setupUsingDigitalPin(pin);
+}
+
+
+void GuzikTrio::setupTurnFirstHandler(FunctionObject<void(void)> event_st){
+	st.setupTurnOnHandler(event_st);
+}
+
+void GuzikTrio::setupTurnSecondHandler(FunctionObject<void(void)> event_nd){
+	nd.setupTurnOnHandler(event_nd);
+}
+
+void GuzikTrio::setupTurnThirdHandler(FunctionObject<void(void)> event_rd){
+	rd.setupTurnOnHandler(event_rd);
+}
+
+void GuzikTrio::update(bool debug){
+	st.update(debug); 
+	nd.update(debug);
+	rd.update(debug);
+}

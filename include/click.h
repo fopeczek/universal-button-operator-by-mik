@@ -36,3 +36,27 @@ private:
 	click_state m_state = click_state::pulled; // pulled - nic nie naciśnięte. pressed_in_grace_period - naciśnięty klawisz, ale w grace period, który blokuje zdarzenie puszczenia klawisza
 };
 
+class GuzikTrio {
+public:	
+
+	void setupFirstUsingDigitalPin(int pin);
+	void setupFirstUsingAnalogPin(int pin);
+
+	void setupSecondUsingDigitalPin(int pin);
+	void setupSecondUsingAnalogPin(int pin);
+
+	void setupThirdUsingDigitalPin(int pin);
+	void setupThirdUsingAnalogPin(int pin);
+
+	void setupTurnFirstHandler(FunctionObject<void(void)> event_st);
+
+	void setupTurnSecondHandler(FunctionObject<void(void)> event_nd);
+	
+	void setupTurnThirdHandler(FunctionObject<void(void)> event_rd);
+
+	void update(bool debug=false);
+private:
+	Guzik st;
+	Guzik nd;
+	Guzik rd;
+};
