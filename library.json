@@ -14,6 +14,7 @@
 }],
 "license": "Apache-2.0",
 "dependencies": {
-	"Silent/function_objects": "^1.0.0"
+	"Silent/function_objects": "^1.0.0",
+	"paulstoffregen/CapacitiveSensor": "^0.5.1"
 }
 }
